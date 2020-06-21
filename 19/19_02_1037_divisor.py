@@ -29,9 +29,11 @@
 
 def main():
     num1 = int(input())
-    num2 = map(int, input().split())
+    num2 = list(map(int, input().split()))
 
-    num2 = [int(i) for i in num2]
+    # 또는 아래 방식으로 형변환
+    # num2 = map(int, input().split())
+    # num2 = [int(i) for i in num2]
 
     numMax = max(num2)
     numMin = min(num2)
