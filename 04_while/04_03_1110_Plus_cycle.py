@@ -38,20 +38,19 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
 def main():
     try:
         num_int = int(input())
-        num_list = []
+        num_list = [0, 0, 0]
         num_result = 0
         num_count = 0
 
         if num_int < 10:
-            num_list.append(0)
-            num_list.append(num_int)
+            num_list[1] = num_int
         elif 9 < num_int < 100:
-            num_list.append(int(num_int / 10))
-            num_list.append(num_int % 10)
-
-        num_list.append(num_list[0] + num_list[1])
+            num_list[0] = int(num_int / 10)
+            num_list[1] = num_int % 10
 
         while True:
+            num_list[2] = num_list[0] + num_list[1]
+
             if 9 < num_list[2]:
                 num_list[2] %= 10
 
@@ -67,8 +66,6 @@ def main():
             elif 9 < num_list[2] < 100:
                 num_list[0] = int(num_list[2]/10)
                 num_list[1] = num_list[2] % 10
-
-            num_list[2] = num_list[0] + num_list[1]
 
     except:
         return
